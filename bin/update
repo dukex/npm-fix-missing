@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+var update = require('../');
+var args = process.argv.slice(2);
+
+update.init(function(response){
+  update.installMissing(args.indexOf('-f') > -1)
+});
